@@ -19,6 +19,11 @@
       "id": 4,
       "title": "A Tale of Two Cities",
       "author": "Charles Dickens"
+    },
+    {
+      "title": "Harry Potter and the Chamber of Secrets",
+      "author": "JK Rowling",
+      "id": 5
     }
   ]
 }
