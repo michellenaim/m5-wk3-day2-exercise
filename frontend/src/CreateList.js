@@ -10,34 +10,35 @@ const CreateList = (props) => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Create New List
+        Add Book
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>New List</Modal.Title>
+          <Modal.Title>Add Book</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <label>
+            <b>Book Title</b>
+          </label>
           <input
             type="text"
             placeholder="Title"
             name="title"
-            value={props.singledata.title}
             onChange={props.handleChange}
             className="d-block my-3"
           />
+          <label>
+            <b>Author</b>
+          </label>
           <input
             type="text"
             placeholder="Author"
             name="author"
-            value={props.singledata.author}
             onChange={props.handleChange}
             className="d-block my-3"
           />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
+        <Modal.Footer className="justify-content-start">
           <Button
             variant="primary"
             onClick={() => {
@@ -45,7 +46,10 @@ const CreateList = (props) => {
               props.createList();
             }}
           >
-            Create
+            Save
+          </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Cancel
           </Button>
         </Modal.Footer>
       </Modal>

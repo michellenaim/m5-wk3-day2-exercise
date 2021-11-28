@@ -6,11 +6,11 @@ const DeleteList = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  
   return (
     <>
       <Button
-        variant="primary"
+        variant="warning"
         onClick={(event) => {
           handleShow();
           props.getList(event, props.elementId);

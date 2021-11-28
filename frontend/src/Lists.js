@@ -4,26 +4,22 @@ import UpdateList from "./UpdateList";
 import DeleteList from "./DeleteList";
 
 const Lists = (props) => {
-  console.log(props);
   let listrows = [];
   props.alldata.forEach((ele) => {
     listrows.push(
       <tr key={ele.id}>
-        <td>{ele.id}</td>
         <td>{ele.title}</td>
         <td>{ele.author}</td>
         <td>
           <UpdateList
-            elementId={ele.id}
+            elementId={ele._id}
             singledata={props.singledata}
             getList={props.getList}
             updateList={props.updateList}
             handleChange={props.handleChange}
           />
-        </td>
-        <td>
           <DeleteList
-            elementId={ele.id}
+            elementId={ele._id}
             singledata={props.singledata}
             getList={props.getList}
             deleteList={props.deleteList}
@@ -36,11 +32,9 @@ const Lists = (props) => {
     <table className="table table-striped">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Title</th>
+          <th>Book Title</th>
           <th>Author</th>
-          <th>Update</th>
-          <th>Delete</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>{listrows}</tbody>
