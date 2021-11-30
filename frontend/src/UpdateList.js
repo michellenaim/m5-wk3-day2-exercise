@@ -52,7 +52,7 @@ const UpdateList = (props) => {
             variant="primary"
             onClick={(event) => {
               handleClose();
-              props.updateList(event);
+              props.updateList(event, props.elementId);
             }}
           >
             Save

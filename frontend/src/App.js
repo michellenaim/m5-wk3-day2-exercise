@@ -96,8 +96,8 @@ class App extends React.Component {
     );
   };
 
-  updateList = (event) => {
-    fetch("http://localhost:8080/api/post/", {
+  updateList = (event, id) => {
+    fetch("http://localhost:8080/api/post/" + id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

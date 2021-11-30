@@ -76,13 +76,10 @@ exports.deleteBook = (req, res) => {
 };
 
 exports.updateBook = (req, res) => {
-  Book.findByIdAndUpdate(
-    req.body._id,
-    {
-      title: req.body.title,
-      author: req.body.author
-    }
-  )
+  Book.findByIdAndUpdate(req.params.id, {
+    title: req.body.title,
+    author: req.body.author,
+  })
     .select("-__v")
     .then((book) => {
       if (!book) {
