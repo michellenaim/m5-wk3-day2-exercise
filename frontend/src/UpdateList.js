@@ -7,7 +7,7 @@ const UpdateList = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   return (
     <>
       <Button
@@ -52,7 +52,7 @@ const UpdateList = (props) => {
             variant="primary"
             onClick={(event) => {
               handleClose();
-              props.updateList(event, props.elementId);
+              props.updateList(event);
             }}
           >
             Save

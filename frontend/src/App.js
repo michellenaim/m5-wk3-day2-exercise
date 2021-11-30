@@ -24,7 +24,7 @@ class App extends React.Component {
         this.setState({
           loading: false,
           alldata: result,
-        })
+        });
       })
       .catch();
   }
@@ -56,7 +56,7 @@ class App extends React.Component {
   };
 
   createList = () => {
-    fetch("http://localhost:8080/api/posts", {
+    fetch("http://localhost:8080/api/post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +82,7 @@ class App extends React.Component {
         },
       },
       () => {
-        fetch("http://localhost:8080/api/posts/" + id)
+        fetch("http://localhost:8080/api/post/" + id)
           .then((res) => res.json())
           .then((result) => {
             this.setState({
@@ -96,17 +96,17 @@ class App extends React.Component {
     );
   };
 
-  updateList = (event, id) => {
-    fetch("http://localhost:8080/api/posts/" + id, {
+  updateList = (event) => {
+    fetch("http://localhost:8080/api/post/", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(this.state.singledata),
-      params: JSON.stringify(id),
     })
       .then((res) => {
-        res.json()})
+        res.json();
+      })
       .then((result) => {
         this.setState({
           singledata: {
@@ -116,11 +116,11 @@ class App extends React.Component {
         });
         this.getLists();
       })
-      .catch(error => console.log(error))
+      .catch((error) => console.log(error));
   };
 
   deleteList = (event, id) => {
-    fetch("http://localhost:8080/api/posts/" + id, {
+    fetch("http://localhost:8080/api/post/" + id, {
       method: "DELETE",
     })
       .then((res) => res.json())
